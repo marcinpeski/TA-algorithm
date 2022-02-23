@@ -721,6 +721,8 @@ class Log:
         self.output = output
 
     def add_line(self, line):
+        if len(line)>100: 
+            line = line[:100] 
         self.contents.append(line)
         if self.output == 'screen':
             text = ''
